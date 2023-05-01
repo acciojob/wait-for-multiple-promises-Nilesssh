@@ -11,7 +11,6 @@ function createPromise() {
 const promises = [createPromise(), createPromise(), createPromise()];
 
 const table = document.getElementById("myTable");
-const loadingRow = table.insertRow();
 
 Promise.all(promises)
   .then((results) => {
@@ -20,10 +19,14 @@ Promise.all(promises)
     results.forEach((result, index) => {
       const row = table.insertRow();
       const promiseCell = row.insertCell();
-      promiseCell.innerHTML = 'Loading...';
-      promiseCell.innerHTML = `Promise ${index + 1}`;
+		promiseCell.innerText = "Loading...";
+	 setTimeout(()=>{
+		 promiseCell.innerHTML = `Promise ${index + 1}`;
       const timeCell = row.insertCell();
       timeCell.innerHTML = `${result} s`;
+	 },2000);
+		
+      
     });
 
     const totalRow = table.insertRow();
