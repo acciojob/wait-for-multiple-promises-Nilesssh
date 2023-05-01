@@ -29,12 +29,14 @@ Promise.all(promises)
       
     });
 
-    const totalRow = table.insertRow();
+    setTimeout(()=>{
+		const totalRow = table.insertRow();
     const totalCell = totalRow.insertCell();
     totalCell.innerHTML = "Total";
     const totalTimeCell = totalRow.insertCell();
     const totalTime = results.reduce((acc, curr) => acc + curr, 0);
     totalTimeCell.innerHTML = `${totalTime.toFixed(3)} s`;
+	},2100)
   })
   .catch((error) => {
     console.log(error);
