@@ -24,7 +24,7 @@ Promise.all(promises)
 		 promiseCell.innerHTML = `Promise ${index + 1}`;
       const timeCell = row.insertCell();
       timeCell.innerHTML = `${result} s`;
-	 },2000);
+	 },Math.floor(((Math.random()*1000)-1000)/3000));
 		
       
     });
