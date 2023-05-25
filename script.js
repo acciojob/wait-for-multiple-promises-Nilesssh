@@ -25,10 +25,7 @@ Promise.all(promises)
       const timeCell = row.insertCell();
       timeCell.innerHTML = `${result} s`;
 	 },Math.floor(((Math.random()*1000)-1000)/3000));
-		
-      
     });
-
     setTimeout(()=>{
 		const totalRow = table.insertRow();
     const totalCell = totalRow.insertCell();
@@ -36,7 +33,7 @@ Promise.all(promises)
     const totalTimeCell = totalRow.insertCell();
     const totalTime = results.reduce((acc, curr) => acc + curr, 0);
     totalTimeCell.innerHTML = `${totalTime.toFixed(3)} s`;
-	},2100)
+	},Math.floor(((Math.random()*1000)-1000)/3000))
   })
   .catch((error) => {
     console.log(error);
